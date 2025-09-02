@@ -1,0 +1,113 @@
+/* Root variables for typography and spacing */
+:root {
+  --font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --color-bg: #ffffff;
+  --color-text: #0a0f17;
+  --color-primary: #177FBF;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --max-width: 960px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--color-bg);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.site-header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  padding: var(--space-4) var(--space-2);
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: var(--space-3) var(--space-2);
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: var(--space-2);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  margin: 0 0 var(--space-2);
+}
+
+p {
+  margin: 0 0 var(--space-2);
+}
